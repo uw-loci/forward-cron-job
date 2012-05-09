@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>1.11</version>
+	</parent>
+
+	<groupId>loci</groupId>
+	<artifactId>forward-cron-job</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Forward cron job</name>
+	<description>Cron job for WiscScan/UW-Forward integration</description>
+	<url>http://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>loci</groupId>
+			<artifactId>scifio</artifactId>
+			<version>4.4-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<organization>
+		<name>UW-Madison LOCI</name>
+		<url>http://loci.wisc.edu/</url>
+	</organization>
+
+	<mailingLists>
+		<mailingList>
+			<name>LOCI Software</name>
+			<subscribe>https://lists.wisc.edu/read/all_forums/subscribe?name=locisoftware</subscribe>
+			<unsubscribe>https://lists.wisc.edu/read/?forum=locisoftware</unsubscribe>
+			<post>locisoftware@lists.wisc.edu</post>
+			<archive>https://lists.wisc.edu/read/?forum=locisoftware</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:git://github.com/uw-loci/forward-cron-job.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:uw-loci/forward-cron-job.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/uw-loci/forward-cron-job</url>
+	</scm>
+
+	<!-- NB: for project parent -->
+	<repositories>
+		<repository>
+			<id>imagej.releases</id>
+			<url>http://maven.imagej.net/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<id>imagej.snapshots</id>
+			<url>http://maven.imagej.net/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+
+</project>
