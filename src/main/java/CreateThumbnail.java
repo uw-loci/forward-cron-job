@@ -8,7 +8,7 @@ import loci.formats.meta.IMetadata;
 import ome.xml.model.primitives.PositiveInteger;
 
 /**
- * This file is used in the 'publish' cron job. Takes a given tiff file and
+ * This file is used in the 'publish' cron job. Takes a given image file and
  * creates a thumbnail. Used to create thumbnails for Forward website.
  * 
  * @author Eric Alexander
@@ -16,31 +16,23 @@ import ome.xml.model.primitives.PositiveInteger;
 public class CreateThumbnail {
 
 	public static void main(final String[] args) throws Exception {
-		// Usage: java CreateThumbnail /current/path/to/tiff
-		// /desired/path/to/thumbnail
 		if (args.length == 2) {
-			final String tiffFile = args[0];
+			final String imageFile = args[0];
 			final String thumbnailPath = args[1];
 
-			if (!tiffFile.endsWith(".ome.tiff")) {
-				System.err.println("Error: " + tiffFile +
-					" does not have the proper extension for OME-TIFF.");
-				return;
-			}
-
-			readThumbnail(tiffFile, thumbnailPath);
+			readThumbnail(imageFile, thumbnailPath);
 		}
 		else {
 			System.err.println("Error: Improper arguments.");
 			System.err.println("Usage: java CreateThumbnail "
-				+ "/current/path/to/tiff /desired/path/to/thumbnail");
+				+ "/current/path/to/image_data /desired/path/to/thumbnail");
 		}
 	}
 
 	/**
-	 * Creates a thumbnail for a given tiff file.
+	 * Creates a thumbnail for a given image file.
 	 * 
-	 * @param filePath path to the tiff file
+	 * @param filePath path to the image file
 	 * @param thumbnailPath intended path to thumbnail
 	 */
 	public static void readThumbnail(final String filePath,
