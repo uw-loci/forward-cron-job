@@ -72,24 +72,24 @@ do
 		basename=${mets_file:$((lastslash+1))}
 		basename=${basename:0:$((${#basename}-4))}
 
-		# Make sure a matching tiff exists.
+		# Make sure a matching data file exists.
 		match=false
-		for temp_tiff in $DATA_FILES
+		for temp_data in $DATA_FILES
 		do
-			extractedXML=`tiffcomment $temp_tiff`
+			extractedXML=`showinf -nopix -novalid -omexml-only $temp_data`
 			if [[ $extractedXML == *urn:lsid:loci.wisc.edu:Dataset:$basename\"* ]]
 			then
-				tiff_file=$temp_tiff
+				data_file=$temp_data
 				match=true
 				if [ "$DEBUG" ]; then
-					echo "MATCH: $tiff_file"
+					echo "MATCH: $data_file"
 				fi
 				break
 			fi
 		done
 		if ! $match
 		then
-			echo "Error: No tiff file matches: $basename"
+			echo "Error: No data file matches: $basename"
 			echo "Skipping to next METS file."
 			continue
 		fi
@@ -117,11 +117,11 @@ do
 		thumbnail_path="$FORWARD_PATH/$basename.jpg"
 		if [ "$DEBUG" ]; then
 			echo "About to javac"
-			echo "tiff_file: $tiff_file"
+			echo "data_file: $data_file"
 			echo "thumbnail_path: $thumbnail_path"
 		fi
 		java -cp loci_tools.jar:. CreateThumbnail \
-			"$tiff_file" "$thumbnail_path" > /dev/null
+			"$data_file" "$thumbnail_path" > /dev/null
 
 		# If everything went smoothly, symlink the metadata
 		if [ $? -eq 0 ]
