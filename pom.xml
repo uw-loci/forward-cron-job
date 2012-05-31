@@ -18,6 +18,7 @@
 	<name>Forward cron job</name>
 	<description>Cron job for WiscScan/UW-Forward integration</description>
 	<url>http://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
+	<inceptionYear>2011</inceptionYear>
 
 	<dependencies>
 		<dependency>
