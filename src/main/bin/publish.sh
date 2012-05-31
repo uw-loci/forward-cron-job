@@ -29,16 +29,20 @@ DATA_PATH='/data'
 
 METS_FILES=`find $DATA_PATH -name '*.xml'`
 SYM_LINKS=`find $FORWARD_PATH -name '*.xml'`
-TIFF_FILES=`find $DATA_PATH -name '*.ome.tiff'`
+DATA_FILES=`find $DATA_PATH -name '*.ome.tiff'`
 
-#echo "TIFF_FILES: "$TIFF_FILES
-#echo "METS_FILES: "$METS_FILES
-#echo "SYM_LINKS: "$SYM_LINKS
+if [ "$DEBUG" ]; then
+	echo "DATA_FILES: $DATA_FILES"
+	echo "METS_FILES: $METS_FILES"
+	echo "SYM_LINKS: $SYM_LINKS"
+fi
 
 for mets_file in $METS_FILES
 do
 	new=true
-	#echo "CURRENT METS_FILE " $mets_file
+	if [ "$DEBUG" ]; then
+		echo "mets_file: $mets_file"
+	fi
 
 	# If file is already in directory, ignore it.
 	for sym_link in $SYM_LINKS
@@ -70,20 +74,22 @@ do
 
 		# Make sure a matching tiff exists.
 		match=false
-		for temp_tiff in $TIFF_FILES
+		for temp_tiff in $DATA_FILES
 		do
 			extractedXML=`tiffcomment $temp_tiff`
 			if [[ $extractedXML == *urn:lsid:loci.wisc.edu:Dataset:$basename\"* ]]
 			then
 				tiff_file=$temp_tiff
 				match=true
-				#echo "MATCH" $tiff_file
+				if [ "$DEBUG" ]; then
+					echo "MATCH: $tiff_file"
+				fi
 				break
 			fi
 		done
 		if ! $match
 		then
-			echo "Error: No tiff file matches" $basename
+			echo "Error: No tiff file matches: $basename"
 			echo "Skipping to next METS file."
 			continue
 		fi
@@ -108,16 +114,20 @@ do
 
 		# Generate a thumbnail
 		# Usage: javac -cp loci_tools.jar:. CreateThumbnail originalPath newThumbnailPath
-		#echo "About to javac"
-		#echo "tiff_file: "$tiff_file
-		#echo "newThumbnailPath: "$FORWARD_PATH/$basename.tiff
+		thumbnail_path="$FORWARD_PATH/$basename.jpg"
+		if [ "$DEBUG" ]; then
+			echo "About to javac"
+			echo "tiff_file: $tiff_file"
+			echo "thumbnail_path: $thumbnail_path"
+		fi
 		java -cp loci_tools.jar:. CreateThumbnail \
-			$tiff_file $FORWARD_PATH/$basename.jpg > /dev/null
+			"$tiff_file" "$thumbnail_path" > /dev/null
 
 		# If everything went smoothly, symlink the metadata
 		if [ $? -eq 0 ]
 		then
-			ln -s $mets_file $FORWARD_PATH/$basename.xml
+			symlink_path="$FORWARD_PATH/$basename.xml"
+			ln -s "$mets_file" "$symlink_path"
 		fi
 	fi
 done
