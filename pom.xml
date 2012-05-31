@@ -6,9 +6,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.scijava</groupId>
-		<artifactId>pom-scijava</artifactId>
-		<version>1.11</version>
+		<groupId>loci</groupId>
+		<artifactId>pom-loci</artifactId>
+		<version>1.2</version>
 	</parent>
 
 	<groupId>loci</groupId>
@@ -28,20 +28,7 @@
 		</dependency>
 	</dependencies>
 
-	<organization>
-		<name>UW-Madison LOCI</name>
-		<url>http://loci.wisc.edu/</url>
-	</organization>
 
-	<mailingLists>
-		<mailingList>
-			<name>LOCI Software</name>
-			<subscribe>https://lists.wisc.edu/read/all_forums/subscribe?name=locisoftware</subscribe>
-			<unsubscribe>https://lists.wisc.edu/read/?forum=locisoftware</unsubscribe>
-			<post>locisoftware@lists.wisc.edu</post>
-			<archive>https://lists.wisc.edu/read/?forum=locisoftware</archive>
-		</mailingList>
-	</mailingLists>
 
 	<scm>
 		<connection>scm:git:git://github.com/uw-loci/forward-cron-job.git</connection>
