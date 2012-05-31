@@ -66,7 +66,7 @@
 
 	<scm>
 		<connection>scm:git:git://github.com/uw-loci/forward-cron-job.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:uw-loci/forward-cron-job.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:uw-loci/forward-cron-job.git</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/uw-loci/forward-cron-job</url>
 	</scm>
