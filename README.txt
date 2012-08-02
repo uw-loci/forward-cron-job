@@ -11,24 +11,20 @@ Specifically, the workflow with respect to WiscScan looks like this:
        .ome.tiff files.
     3. The cron job contained in the file "publish.sh" runs hourly. When it
        detects new files in the /data directory, it does two things:
-       - Create a thumbnail for each dataset by running "CreateThumbnail.java"
+       - Create a thumbnail for each dataset by running "CreateThumbnail"
        - Copy the thumbnail and the METS companion file into
          /var/www/forward/adds directory
     4. Forward queries the /var/www/forward/adds directory and links the files
        there to its website.
 
-A couple of notes on setting this up properly. First, CreateThumbnail.java
-needs to be compiled with loci_tools.jar (found here:
-http://www.loci.wisc.edu/software/bio-formats). This file, along with /bftools
-(also on that same website) and the log4j.properties file should all be stored
-in the same directory as publish.sh and CreateThumbnail.java.
-CreateThumbnail.java can then be compiled by running:
+To compile the code:
+  mvn
 
-    javac -cp loci_tools.jar CreateThumbnail.java
+To upload changes to the server:
+  bin/upload-to-server.sh
 
 After that, publish.sh (which calls the Java program) should run correctly. To
 make it a cron job, it has been sym-linked to the /etc/cron.hourly directory.
 
 For more information, see:
-
     http://loci.wisc.edu/wiscscan/uw-forward-collaboration
