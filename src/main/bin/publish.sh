@@ -113,15 +113,14 @@ do
 		fi
 
 		# Generate a thumbnail
-		# Usage: javac -cp loci_tools.jar:. CreateThumbnail originalPath newThumbnailPath
+		# Usage: javac -cp '*' CreateThumbnail originalPath newThumbnailPath
 		thumbnail_path="$FORWARD_PATH/$basename.jpg"
 		if [ "$DEBUG" ]; then
 			echo "About to javac"
 			echo "data_file: $data_file"
 			echo "thumbnail_path: $thumbnail_path"
 		fi
-		java -cp loci_tools.jar:. CreateThumbnail \
-			"$data_file" "$thumbnail_path" > /dev/null
+		java -cp '*' CreateThumbnail "$data_file" "$thumbnail_path" > /dev/null
 
 		# If everything went smoothly, symlink the metadata
 		if [ $? -eq 0 ]
