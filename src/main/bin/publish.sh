@@ -76,7 +76,7 @@ do
 		match=false
 		for temp_data in $DATA_FILES
 		do
-			extractedXML=`showinf -nopix -novalid -omexml-only $temp_data`
+			extractedXML=`java -cp '*' loci.formats.tools.ImageInfo -nopix -novalid -omexml-only $temp_data`
 			if [[ $extractedXML == *urn:lsid:loci.wisc.edu:Dataset:$basename\"* ]]
 			then
 				data_file=$temp_data
@@ -113,7 +113,6 @@ do
 		fi
 
 		# Generate a thumbnail
-		# Usage: javac -cp '*' CreateThumbnail originalPath newThumbnailPath
 		thumbnail_path="$FORWARD_PATH/$basename.jpg"
 		if [ "$DEBUG" ]; then
 			echo "About to javac"
