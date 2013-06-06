@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>loci</groupId>
 		<artifactId>pom-loci</artifactId>
-		<version>1.2</version>
+		<version>1.6</version>
 	</parent>
 
 	<groupId>loci</groupId>
@@ -22,9 +22,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>loci</groupId>
+			<groupId>${bio-formats.groupId}</groupId>
 			<artifactId>scifio</artifactId>
-			<version>4.4-SNAPSHOT</version>
+			<version>${bio-formats.version}</version>
 		</dependency>
 	</dependencies>
 
