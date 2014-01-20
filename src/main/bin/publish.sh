@@ -4,7 +4,7 @@
 # #%L
 # Cron job for WiscScan/UW-Forward integration.
 # %%
-# Copyright (C) 2011 - 2012 Board of Regents of the University of
+# Copyright (C) 2011 - 2014 Board of Regents of the University of
 # Wisconsin-Madison.
 # %%
 # Licensed under the Apache License, Version 2.0 (the "License");
