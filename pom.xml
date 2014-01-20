@@ -29,15 +29,6 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
 	<developers>
 		<developer>
 			<name>Eric Alexander</name>
