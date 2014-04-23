@@ -26,6 +26,10 @@
 			<groupId>ome</groupId>
 			<artifactId>formats-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-bsd</artifactId>
+		</dependency>
 	</dependencies>
 
 	<developers>
