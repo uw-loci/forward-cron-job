@@ -23,9 +23,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>${bio-formats.groupId}</groupId>
-			<artifactId>scifio</artifactId>
-			<version>${bio-formats.version}</version>
+			<groupId>ome</groupId>
+			<artifactId>formats-api</artifactId>
 		</dependency>
 	</dependencies>
 
