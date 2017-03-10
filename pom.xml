@@ -17,7 +17,7 @@
 
 	<name>Forward cron job</name>
 	<description>Cron job for WiscScan/UW-Forward integration.</description>
-	<url>http://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
+	<url>https://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
 	<inceptionYear>2011</inceptionYear>
 
 	<developers>
@@ -52,7 +52,7 @@
 	<repositories>
 		<repository>
 			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
+			<url>https://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
 
