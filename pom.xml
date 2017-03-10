@@ -20,17 +20,6 @@
 	<url>http://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
 	<inceptionYear>2011</inceptionYear>
 
-	<dependencies>
-		<dependency>
-			<groupId>ome</groupId>
-			<artifactId>formats-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ome</groupId>
-			<artifactId>formats-bsd</artifactId>
-		</dependency>
-	</dependencies>
-
 	<developers>
 		<developer>
 			<name>Eric Alexander</name>
@@ -72,4 +61,14 @@
 		</repository>
 	</repositories>
 
+	<dependencies>
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-bsd</artifactId>
+		</dependency>
+	</dependencies>
 </project>
