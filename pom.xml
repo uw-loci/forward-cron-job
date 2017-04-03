@@ -6,12 +6,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>loci</groupId>
-		<artifactId>pom-loci</artifactId>
-		<version>2.0.0</version>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>14.0.0</version>
 		<relativePath />
 	</parent>
 
+	<groupId>loci</groupId>
 	<artifactId>forward-cron-job</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
@@ -19,6 +20,17 @@
 	<description>Cron job for WiscScan/UW-Forward integration.</description>
 	<url>https://loci.wisc.edu/wiscscan/uw-forward-collaboration</url>
 	<inceptionYear>2011</inceptionYear>
+	<organization>
+		<name>LOCI</name>
+		<url>https://loci.wisc.edu/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Apache Software License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -42,12 +54,36 @@
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>LOCI Software</name>
+			<subscribe>https://loci.wisc.edu/mailman/listinfo/loci-software</subscribe>
+			<unsubscribe>https://loci.wisc.edu/mailman/listinfo/loci-software</unsubscribe>
+			<post>loci-software@loci.wisc.edu</post>
+			<archive>https://loci.wisc.edu/pipermail/loci-software/</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
 		<connection>scm:git:git://github.com/uw-loci/forward-cron-job</connection>
 		<developerConnection>scm:git:git@github.com:uw-loci/forward-cron-job</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/uw-loci/forward-cron-job</url>
 	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/uw-loci/forward-cron-job/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/uw-loci/forward-cron-job</url>
+	</ciManagement>
+
+	<properties>
+		<license.licenseName>apache_v2</license.licenseName>
+		<license.copyrightOwners>Board of Regents of the University of
+Wisconsin-Madison.</license.copyrightOwners>
+	</properties>
 
 	<repositories>
 		<repository>
